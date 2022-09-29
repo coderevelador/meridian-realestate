@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyAminityController;
 use App\Http\Controllers\PropertyTypeController;
 use App\Http\Controllers\PropertyStatusController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,11 @@ Route::prefix('property')->group(function () {
     Route::get('/edit-status/{id}', [PropertyStatusController::class, 'edit'])->name('property-status-edit');
     Route::get('/edit-status/{id}/update', [PropertyStatusController::class, 'update'])->name('property-status-update');
     Route::get('/delete-status/{id}', [PropertyStatusController::class, 'delete'])->name('property-status-delete');
-
-});
-
+    // aminity
+    Route::get('/aminity', [PropertyAminityController::class, 'index'])->name('property-aminity');
+    Route::get('/add-aminity', [PropertyAminityController::class, 'create'])->name('property-aminity-add');
+    Route::post('/store-aminity', [PropertyAminityController::class, 'store'])->name('property-aminity-store');
+    Route::get('/edit-aminity/{id}', [PropertyAminityController::class, 'edit'])->name('property-aminity-edit');
+    Route::get('/edit-aminity/{id}/update', [PropertyAminityController::class, 'update'])->name('property-aminity-update');
+    Route::get('/delete-aminity/{id}', [PropertyAminityController::class, 'delete'])->name('property-aminity-delete');
+}); 
