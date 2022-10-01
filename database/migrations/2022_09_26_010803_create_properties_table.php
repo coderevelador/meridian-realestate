@@ -26,7 +26,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('area')->nullable();
             $table->string('bedroom')->nullable();
             $table->string('bathroom')->nullable();
-            $table->integer('amenities_id')->nullable();
+            $table->string('amenities_id')->nullable();
             $table->timestamps();
         });
     }

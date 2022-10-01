@@ -38,6 +38,7 @@
                 <a class="collapse-item" href="{{ route('property-type') }}">Type</a>
                 <a class="collapse-item" href="{{ route('property-status') }}">Status</a>
                 <a class="collapse-item" href="{{ route('property-aminity') }}">Aminity</a>
+                <a class="collapse-item" href="{{ route('properties') }}">Properties</a>
                 
             </div>
         </div>

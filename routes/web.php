@@ -3,6 +3,7 @@
 use App\Http\Controllers\PropertyAminityController;
 use App\Http\Controllers\PropertyTypeController;
 use App\Http\Controllers\PropertyStatusController;
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider within a group which | contains the "web" middleware group. Now create something great! | */
@@ -39,4 +40,9 @@ Route::prefix('property')->group(function () {
     Route::get('/edit-aminity/{id}', [PropertyAminityController::class, 'edit'])->name('property-aminity-edit');
     Route::get('/edit-aminity/{id}/update', [PropertyAminityController::class, 'update'])->name('property-aminity-update');
     Route::get('/delete-aminity/{id}', [PropertyAminityController::class, 'delete'])->name('property-aminity-delete');
+    // Properties
+    Route::get('/properties', [PropertyController::class, 'index'])->name('properties');
+    Route::get('/add-properties', [PropertyController::class, 'create'])->name('add-properties');
+    Route::post('/store-properties', [PropertyController::class, 'store'])->name('store-properties');
+
 }); 
