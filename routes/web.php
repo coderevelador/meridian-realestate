@@ -44,5 +44,8 @@ Route::prefix('property')->group(function () {
     Route::get('/properties', [PropertyController::class, 'index'])->name('properties');
     Route::get('/add-properties', [PropertyController::class, 'create'])->name('add-properties');
     Route::post('/store-properties', [PropertyController::class, 'store'])->name('store-properties');
+    Route::get('/edit-properties/{id}', [PropertyController::class, 'edit'])->name('edit-properties');
+    Route::post('/update-properties/{id}', [PropertyController::class, 'update'])->name('update-properties');
+    Route::get('/delete-properties/{id}', [PropertyController::class, 'delete'])->name('delete-properties');
 
 }); 

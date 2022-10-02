@@ -19,7 +19,12 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Location</th>
+                                <th>Price</th>
+                                <th>Area</th>
+                                <th>Status</th>
                                 <th>Image</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,21 +38,38 @@
                                     <td>
                                         {{ $property->name }}
                                     </td>
-
                                     <td>
+                                        {{ $property->location }}
+                                    </td>
+                                    <td>
+                                        ₹ {{ $property->price }}
+                                    </td>
+                                    <td>
+                                        {{ $property->area }} Sq.ft.
+                                    </td>
+                                    <td>
+                                        <span
+                                            class="badge badge-{{ $property->statues->name == 'Sold Out' ? 'danger' : 'success' }}">{{ $property->statues->name }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <img src="/image/properties/{{ $property->image }}"
+                                            alt="Property for sale in {{ $property->location }}" width="100px">
+                                    </td>
+                                    {{-- <td>
                                         @foreach (explode(',', $property->gallery) as $img)
                                             <div>
                                                 <img src="/image/properties/{{ $img }}" alt=""
                                                     width="100px">
                                             </div>
                                         @endforeach
-                                    </td>
+                                    </td> --}}
 
                                     <td>
-                                        {{-- <a href="{{ route('property-aminity-edit', $type->id) }}"
+                                        <a href="{{ route('edit-properties', $property->id) }}"
                                             class="btn btn-primary">Edit</a>
-                                        <a href="{{ route('property-aminity-delete', $type->id) }}"
-                                            class="btn btn-danger">Delete</a> --}}
+                                        <a href="{{ route('delete-properties', $property->id) }}"
+                                            class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

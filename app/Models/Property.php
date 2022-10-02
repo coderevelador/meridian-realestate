@@ -12,15 +12,15 @@ class Property extends Model
 
     public function types()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, 'type_id');
     }
 
     public function statues()
     {
-        return $this->belongsTo(Status::class);
+        return $this->belongsTo(Status::class, 'status_id');
     }
     public function aminities()
     {
-        return $this->belongsTo(Aminity::class);
+        return $this->belongsTo(Aminity::class, 'amenities_id');
     }
 }
