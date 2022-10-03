@@ -161,6 +161,7 @@ a:hover {
   float: left;
   padding-left: 25px;
   padding-right: 5px;
+  margin-right: 25px;
 }
 
 .list-a li:before {
@@ -1124,6 +1125,7 @@ a:hover {
 
 .gallery-property {
   margin-bottom: 3rem;
+  
 }
 
 .property-price {

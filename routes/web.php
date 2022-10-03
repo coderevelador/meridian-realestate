@@ -4,13 +4,16 @@ use App\Http\Controllers\PropertyAminityController;
 use App\Http\Controllers\PropertyTypeController;
 use App\Http\Controllers\PropertyStatusController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes |-------------------------------------------------------------------------- | | Here is where you can register web routes for your application. These | routes are loaded by the RouteServiceProvider within a group which | contains the "web" middleware group. Now create something great! | */
+//Website Routes
+Route::get('/', [WebsiteController::class, 'index'])->name('website-home');
+Route::get('/all-properties', [WebsiteController::class, 'AllProperties'])->name('all-properties');
+Route::get('/property-single/{id}', [WebsiteController::class, 'Property'])->name('property-single');
+Route::post('/property-contact', [WebsiteController::class, 'PropertyContact'])->name('property-contact');
 
-Route::get('/', function () {
-    return view('frontend/home');
-})->name('website-home');
 
 Auth::routes();
 
@@ -47,5 +50,4 @@ Route::prefix('property')->group(function () {
     Route::get('/edit-properties/{id}', [PropertyController::class, 'edit'])->name('edit-properties');
     Route::post('/update-properties/{id}', [PropertyController::class, 'update'])->name('update-properties');
     Route::get('/delete-properties/{id}', [PropertyController::class, 'delete'])->name('delete-properties');
-
-}); 
+});

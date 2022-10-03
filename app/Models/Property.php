@@ -21,6 +21,6 @@ class Property extends Model
     }
     public function aminities()
     {
-        return $this->belongsTo(Aminity::class, 'amenities_id');
+        return $this->belongsToMany(Aminity::class, 'amenities_id');
     }
 }
