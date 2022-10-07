@@ -39,13 +39,13 @@ class PropertyTypeController extends Controller
         $type = Type::find($id);
         $type->name = $request->name;
         $type->update();
-        return redirect()->route('property-type')->with('message', 'Successfully Updated');
+        return redirect()->route('property-type')->with('info', 'Successfully Updated');
     }
 
     public function delete($id)
     {
         $type = Type::find($id);
         $type->delete();
-        return redirect()->route('property-type')->with('message', 'Successfully Deleted');
+        return redirect()->route('property-type')->with('warning', 'Successfully Deleted');
     }
 }

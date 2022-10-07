@@ -38,13 +38,13 @@ class PropertyStatusController extends Controller
         $status = Status::find($id);
         $status->name = $request->name;
         $status->update();
-        return redirect()->route('property-status')->with('message', 'Successfully Updated');
+        return redirect()->route('property-status')->with('info', 'Successfully Updated');
     }
 
     public function delete($id)
     {
         $status = Status::find($id);
         $status->delete();
-        return redirect()->route('property-status')->with('message', 'Successfully Deleted');
+        return redirect()->route('property-status')->with('error', 'Successfully Deleted');
     }
 }

@@ -26,6 +26,17 @@
 
     <!-- Main Stylesheet File -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- Toastr Notification --}}
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+     alpha/css/bootstrap.css"
+        rel="stylesheet"> --}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 </head>
 
@@ -51,16 +62,19 @@
                             href="{{ route('website-home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="about.html">About Us</a>
+                        <a class="nav-link " href="https://www.meridianhomes.co.in/about-meridian/"
+                            target="_blank">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('all-properties') ? 'active' : '' }}" href="{{ route('all-properties') }}">All Property</a>
+                        <a class="nav-link {{ Route::is('all-properties') ? 'active' : '' }}"
+                            href="{{ route('all-properties') }}">All Property</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog-grid.html">Blog</a>
+                        <a class="nav-link" href="https://www.meridianhomes.co.in/blog/" target="_blank">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="{{route('contact-us')}}" >Contact
+                            Us</a>
                     </li>
                 </ul>
 

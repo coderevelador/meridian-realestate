@@ -13,7 +13,9 @@ Route::get('/', [WebsiteController::class, 'index'])->name('website-home');
 Route::get('/all-properties', [WebsiteController::class, 'AllProperties'])->name('all-properties');
 Route::get('/property-single/{id}', [WebsiteController::class, 'Property'])->name('property-single');
 Route::post('/property-contact', [WebsiteController::class, 'PropertyContact'])->name('property-contact');
-
+Route::get('/property-contact/request', [WebsiteController::class, 'PropertyContactRequest'])->name('property-contact-request');
+Route::get('/property-contact/request/{id}/delete', [WebsiteController::class, 'PropertyContactRequestDelete'])->name('property-contact-request-delete');
+Route::get('/contact-us', [WebsiteController::class, 'PropertyContactUs'])->name('contact-us');
 
 Auth::routes();
 

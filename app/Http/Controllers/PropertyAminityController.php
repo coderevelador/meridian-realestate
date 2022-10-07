@@ -38,13 +38,13 @@ class PropertyAminityController extends Controller
         $aminity = Aminity::find($id);
         $aminity->name = $request->name;
         $aminity->update();
-        return redirect()->route('property-aminity')->with('message', 'Successfully Updated');
+        return redirect()->route('property-aminity')->with('info', 'Successfully Updated');
     }
 
     public function delete($id)
     {
         $aminity = Aminity::find($id);
         $aminity->delete();
-        return redirect()->route('property-aminity')->with('message', 'Successfully Deleted');
+        return redirect()->route('property-aminity')->with('error', 'Successfully Deleted');
     }
 }

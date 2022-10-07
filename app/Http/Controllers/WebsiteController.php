@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Models\PropertyContact;
 use DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 class WebsiteController extends Controller
@@ -49,8 +50,36 @@ class WebsiteController extends Controller
         $contact['email'] = $request->email;
         $contact['comment'] = $request->comment;
         $contact->save();
-        $route = Route::current();
-        return redirect()->back()->with('message', 'Successfully Sent Your Query');
-        
+
+        // Send mail to admin
+        Mail::send('backend.property_contacts.contactMail', array(
+            'name' => $contact['name'],
+            'phone' => $contact['phone'],
+            'email' => $contact['email'],
+            'comment' => $contact['comment']
+        ), function ($message) use ($request) {
+            $message->from($request->email);
+            $message->to('support@meridianhomes.co.in', 'Meridian Admin')->subject('Meridian Realestate Contact Request');
+        });
+
+
+        return redirect()->back()->with('message', 'Successfully Sent Your Message');
+    }
+
+    public function PropertyContactRequest()
+    {
+        $contactrequest = PropertyContact::all();
+        return view('backend.property_contacts.index', compact('contactrequest'));
+    }
+    public function PropertyContactRequestDelete($id)
+    {
+        $contact = PropertyContact::find($id);
+        $contact->delete();
+        return redirect()->back()->with('error', 'Successfully Deleted');
+    }
+
+    public function PropertyContactUs()
+    {
+        return view('frontend.contact');
     }
 }

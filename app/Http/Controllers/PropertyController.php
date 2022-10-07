@@ -123,12 +123,12 @@ class PropertyController extends Controller
 
         $property->update();
 
-        return redirect()->route('properties')->with('message', 'Successfully Updated');
+        return redirect()->route('properties')->with('info', 'Successfully Updated');
     }
     public function delete($id)
     {
         $property = Property::find($id);
         $property->delete();
-        return redirect()->route('properties')->with('message', 'Successfully Deleted');
+        return redirect()->route('properties')->with('error', 'Successfully Deleted');
     }
 }
