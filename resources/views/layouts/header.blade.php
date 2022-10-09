@@ -3,10 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Meridian Homes Property Sales</title>
+    <title>Meridian Homes Property Sales in Pala and Kottayam | House for Sale | Commercial Building for Rent | Land
+        sale</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta
+        content="house for sale in kottayam, house for sale in pala, urgent house for sale in pala, Keralas No.1 Real Estate Website, residental, commercial building, Properties For Sale & Rent in Kottayam, properties for sale in kerala, property for sale kerala, kerala real estate, pala real estate, 	real estate in pala	, pala houses for sale, pala homes for sale	, olx kerala real estate, land for sale in pala, house for rent in pala, commercial building for rent in pala, house for sale in pala "
+        name="keywords">
+    <meta
+        content="Meridian Homes Realestate is the top house sale, house for rent, commercial bulding for sale in pala, properties for sale in pala and kottayam"
+        name="description">
 
     <!-- Favicons -->
     <link href="{{ asset('image/logo-meridian.png') }}" rel="icon">
@@ -73,7 +78,7 @@
                         <a class="nav-link" href="https://www.meridianhomes.co.in/blog/" target="_blank">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact-us')}}" >Contact
+                        <a class="nav-link" href="{{ route('contact-us') }}">Contact
                             Us</a>
                     </li>
                 </ul>

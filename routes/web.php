@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PropertyAminityController;
 use App\Http\Controllers\PropertyTypeController;
 use App\Http\Controllers\PropertyStatusController;
@@ -18,6 +19,7 @@ Route::get('/property-contact/request/{id}/delete', [WebsiteController::class, '
 Route::get('/contact-us', [WebsiteController::class, 'PropertyContactUs'])->name('contact-us');
 
 Auth::routes();
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

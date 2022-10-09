@@ -40,7 +40,7 @@
                                             <br> സ്വന്തമാക്കൂ<br> നിങ്ങളുടെ <span class="color-b">സ്വപ്ന ഭവനം </span>
                                         </h1>
                                         <p class="intro-subtitle intro-price">
-                                            <a href="#"><span class="price-a">View All</span></a>
+                                            <a href="{{ route('all-properties') }}"><span class="price-a">View All</span></a>
                                         </p>
                                     </div>
                                 </div>

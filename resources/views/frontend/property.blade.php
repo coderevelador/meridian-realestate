@@ -40,16 +40,16 @@
                 <div class="col-sm-12">
                     <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
                         @if ($propertiesSingle->gallery)
-                            <div class="carousel-item-b">
-                                @foreach (explode(',', $propertiesSingle->gallery) as $item)
+                            @foreach (explode(',', $propertiesSingle->gallery) as $item)
+                                <div class="carousel-item-b">
                                     <img src="/image/properties/{{ $item }}" alt="{{ $propertiesSingle->name }}">
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="carousel-item-b">
+                                <img src="/image/properties/{{ $propertiesSingle->image }}"
+                                    alt="{{ $propertiesSingle->name }}">
                             </div>
-                        @endforeach
-                    @else
-                        <div class="carousel-item-b">
-
-                            <img src="/image/properties/{{ $propertiesSingle->image }}" alt="{{ $propertiesSingle->name }}">
-                        </div>
                         @endif
                     </div>
                     <div class="row justify-content-between">

@@ -60,6 +60,7 @@ class WebsiteController extends Controller
         ), function ($message) use ($request) {
             $message->from($request->email);
             $message->to('support@meridianhomes.co.in', 'Meridian Admin')->subject('Meridian Realestate Contact Request');
+            $message->to($request->get('email'), $request->get('name'))->subject('Thank You for contacting Meridian Homes');
         });
 
 
